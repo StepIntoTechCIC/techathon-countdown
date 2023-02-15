@@ -27,7 +27,7 @@ body {
 
 .spinner img {
     height: 10vh;
-    animation: 5s infinite forwards linear spinner;
+    animation: 10s infinite forwards linear spinner;
 }
 
 .slides {
@@ -41,7 +41,15 @@ body {
     padding-bottom: 5%;
     text-align: center;
     font-size: 5vh;
-    animation: 195s infinite forwards disco;
+    background: black;
+    background-size: 20vh;
+    background-position: 0 0;
+    animation: 195s infinite forwards linear disco, 20s infinite forwards linear pattern;
+    transform: 1s background-position;
+}
+
+.slides.pos {
+    background-position: 100vw 100vw;
 }
 
 .logo {
@@ -60,7 +68,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1vh;
-    margin-top: 10vh;
+    margin-top: 15vh;
 }
 
 .countdownCell h1 {
@@ -77,18 +85,6 @@ body {
     width: 20vh;
 }
 
-/*
-    `disco` animation keyframe timeline:
-
-          Green        Ilde   Blue         Ilde   Yellow       Ilde
-        |<---------->|<---->|<---------->|<---->|<---------->|<---->|
-        |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  | = 195s
-        |    30%     |  3%  |    30%     |  3%  |    30%     |  3%  |
-        0%          30%    33%          64%    67%          97%    100%
-
-    Ilde: interlude (change between each colour)
-*/
-
 @keyframes spinner {
     0% {
         transform: rotate3d(0, 1, 0, 0deg);
@@ -99,81 +95,106 @@ body {
     }
 }
 
+/*
+    `disco` animation keyframe timeline:
+
+          Green        Ilde   Blue         Ilde   Yellow       Ilde
+        |<---------->|<---->|<---------->|<---->|<---------->|<---->|
+        |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  | = 10s
+        |    30%     |  3%  |    30%     |  3%  |    30%     |  3%  |
+        0%          30%    33%          64%    67%          97%    100%
+
+    Ilde: interlude (change between each colour)
+*/
+
 @keyframes disco {
     0% {
         background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 1;
     }
 
     29% {
         background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 1;
     }
 
     30% {
         background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 0;
     }
 
     33% {
         background-color: var(--blue);
+        background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 0;
     }
 
     35% {
         background-color: var(--blue);
+        background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 1;
     }
 
     62% {
         background-color: var(--blue);
+        background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 1;
     }
 
     64% {
         background-color: var(--blue);
+        background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 0;
     }
 
     67% {
         background-color: var(--yellow);
+        background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 0;
     }
 
     69% {
         background-color: var(--yellow);
+        background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 1;
     }
 
     95% {
         background-color: var(--yellow);
+        background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 1;
     }
 
     97% {
         background-color: var(--yellow);
+        background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 0;
     }
 
     98% {
         background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 0;
     }
 
     100% {
         background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 1;
     }
@@ -202,6 +223,16 @@ body {
 
     100% {
         filter: brightness(1);
+    }
+}
+
+@keyframes pattern {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -100vh;
     }
 }
 
