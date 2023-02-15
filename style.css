@@ -89,6 +89,10 @@ body {
     width: 20vh;
 }
 
+.countdownCell.colon {
+    animation: 2s infinite forwards linear blink;
+}
+
 @keyframes spinner {
     0% {
         transform: rotate3d(0, 1, 0, 0deg);
@@ -277,5 +281,27 @@ body {
     100% {
         top: 1%;
         left: 1%;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
