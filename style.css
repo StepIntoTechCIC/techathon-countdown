@@ -1,0 +1,191 @@
+:root {
+    --green: #00cc3d;
+    --greenText: white;
+    --blue: #00a2ff;
+    --blueText: white;
+    --yellow: #f9cd46;
+    --yellowText: black;
+}
+
+* {
+    font-family: "Russo One", sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    font-size: 5vh;
+    animation: 195s infinite forwards disco;
+}
+
+.logo {
+    height: 10vh;
+    animation: 195s infinite forwards disco-logo;
+}
+
+.antiburn {
+    position: relative;
+    top: 0;
+    left: 0;
+    animation: 100s infinite alternate antiburn;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1vh;
+    margin-top: 10vh;
+}
+
+.countdownCell h1 {
+    margin: 0;
+    font-size: 15vh;
+}
+
+.countdownCell p {
+    margin: 0;
+    font-size: 5vh;
+}
+
+/*
+    `disco` animation keyframe timeline:
+
+          Green        Ilde   Blue         Ilde   Yellow       Ilde
+        |<---------->|<---->|<---------->|<---->|<---------->|<---->|
+        |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  | = 195s
+        |    30%     |  3%  |    30%     |  3%  |    30%     |  3%  |
+        0%          30%    33%          64%    67%          97%    100%
+
+    Ilde: interlude (change between each colour)
+*/
+
+@keyframes disco {
+    0% {
+        background-color: var(--green);
+        color: var(--greenText);
+        opacity: 1;
+    }
+
+    29% {
+        background-color: var(--green);
+        color: var(--greenText);
+        opacity: 1;
+    }
+
+    30% {
+        background-color: var(--green);
+        color: var(--greenText);
+        opacity: 0;
+    }
+
+    33% {
+        background-color: var(--blue);
+        color: var(--blueText);
+        opacity: 0;
+    }
+
+    35% {
+        background-color: var(--blue);
+        color: var(--blueText);
+        opacity: 1;
+    }
+
+    62% {
+        background-color: var(--blue);
+        color: var(--blueText);
+        opacity: 1;
+    }
+
+    64% {
+        background-color: var(--blue);
+        color: var(--blueText);
+        opacity: 0;
+    }
+
+    67% {
+        background-color: var(--yellow);
+        color: var(--yellowText);
+        opacity: 0;
+    }
+
+    69% {
+        background-color: var(--yellow);
+        color: var(--yellowText);
+        opacity: 1;
+    }
+
+    95% {
+        background-color: var(--yellow);
+        color: var(--yellowText);
+        opacity: 1;
+    }
+
+    97% {
+        background-color: var(--yellow);
+        color: var(--yellowText);
+        opacity: 0;
+    }
+
+    98% {
+        background-color: var(--green);
+        color: var(--greenText);
+        opacity: 0;
+    }
+
+    100% {
+        background-color: var(--green);
+        color: var(--greenText);
+        opacity: 1;
+    }
+}
+
+@keyframes disco-logo {
+    0% {
+        filter: brightness(1);
+    }
+
+    64% {
+        filter: brightness(1);
+    }
+
+    67% {
+        filter: brightness(0);
+    }
+
+    97% {
+        filter: brightness(0);
+    }
+
+    98% {
+        filter: brightness(1);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+@keyframes antiburn {
+    0% {
+        top: -1%;
+        left: -1%;
+    }
+
+    100% {
+        top: 1%;
+        left: 1%;
+    }
+}
