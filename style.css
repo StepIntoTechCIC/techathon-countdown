@@ -5,6 +5,8 @@
     --blueText: white;
     --yellow: #f9cd46;
     --yellowText: black;
+    --pink: #ff3656;
+    --pinkText: white;
 }
 
 * {
@@ -15,6 +17,8 @@
 
 body {
     background-color: black;
+    cursor: none;
+    user-select: none;
 }
 
 .spinner {
@@ -44,7 +48,7 @@ body {
     background: black;
     background-size: 20vh;
     background-position: 0 0;
-    animation: 195s infinite forwards linear disco, 20s infinite forwards linear pattern;
+    animation: 260s infinite forwards linear disco, 20s infinite forwards linear pattern;
     transform: 1s background-position;
 }
 
@@ -54,7 +58,7 @@ body {
 
 .logo {
     height: 10vh;
-    animation: 195s infinite forwards disco-logo;
+    animation: 260s infinite forwards disco-logo;
 }
 
 .antiburn {
@@ -98,11 +102,11 @@ body {
 /*
     `disco` animation keyframe timeline:
 
-          Green        Ilde   Blue         Ilde   Yellow       Ilde
-        |<---------->|<---->|<---------->|<---->|<---------->|<---->|
-        |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  | = 10s
-        |    30%     |  3%  |    30%     |  3%  |    30%     |  3%  |
-        0%          30%    33%          64%    67%          97%    100%
+          Green        Ilde   Blue         Ilde   Yellow       Ilde   Pink         Ilde
+        |<---------->|<---->|<---------->|<---->|<---------->|<---->|<---------->|<---->|
+        |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  |    60s     |  5s  | = 260s
+        |    23%     |  2%  |    23%     |  2%  |    23%     |  2%  |    23%     |  2%  |
+        0%          23%    25%          48%    50%          73%    75%          98%    100%
 
     Ilde: interlude (change between each colour)
 */
@@ -112,83 +116,111 @@ body {
         background-color: var(--green);
         background-image: url("media/pattern-green.svg");
         color: var(--greenText);
-        opacity: 1;
+        opacity: 0;
     }
 
-    29% {
+    1% {
         background-color: var(--green);
         background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 1;
     }
 
-    30% {
+    22% {
+        background-color: var(--green);
+        background-image: url("media/pattern-green.svg");
+        color: var(--greenText);
+        opacity: 1;
+    }
+
+    23% {
         background-color: var(--green);
         background-image: url("media/pattern-green.svg");
         color: var(--greenText);
         opacity: 0;
     }
 
-    33% {
+    25% {
         background-color: var(--blue);
         background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 0;
     }
 
-    35% {
+    26% {
         background-color: var(--blue);
         background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 1;
     }
 
-    62% {
+    47% {
         background-color: var(--blue);
         background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 1;
     }
 
-    64% {
+    48% {
         background-color: var(--blue);
         background-image: url("media/pattern-blue.svg");
         color: var(--blueText);
         opacity: 0;
     }
 
-    67% {
+    50% {
         background-color: var(--yellow);
         background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 0;
     }
 
-    69% {
+    51% {
         background-color: var(--yellow);
         background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
         opacity: 1;
     }
 
-    95% {
+    72% {
         background-color: var(--yellow);
         background-image: url("media/pattern-yellow.svg");
         color: var(--yellowText);
+        opacity: 1;
+    }
+
+    73% {
+        background-color: var(--yellow);
+        background-image: url("media/pattern-yellow.svg");
+        color: var(--yellowText);
+        opacity: 0;
+    }
+
+    75% {
+        background-color: var(--pink);
+        background-image: url("media/pattern-pink.svg");
+        color: var(--pinkText);
+        opacity: 0;
+    }
+
+    76% {
+        background-color: var(--pink);
+        background-image: url("media/pattern-pink.svg");
+        color: var(--pinkText);
         opacity: 1;
     }
 
     97% {
-        background-color: var(--yellow);
-        background-image: url("media/pattern-yellow.svg");
-        color: var(--yellowText);
-        opacity: 0;
+        background-color: var(--pink);
+        background-image: url("media/pattern-pink.svg");
+        color: var(--pinkText);
+        opacity: 1;
     }
 
     98% {
-        background-color: var(--green);
-        background-image: url("media/pattern-green.svg");
-        color: var(--greenText);
+        background-color: var(--pink);
+        background-image: url("media/pattern-pink.svg");
+        color: var(--pinkText);
         opacity: 0;
     }
 
@@ -196,7 +228,7 @@ body {
         background-color: var(--green);
         background-image: url("media/pattern-green.svg");
         color: var(--greenText);
-        opacity: 1;
+        opacity: 0;
     }
 }
 
@@ -205,19 +237,19 @@ body {
         filter: brightness(1);
     }
 
-    64% {
+    49% {
         filter: brightness(1);
     }
 
-    67% {
+    50% {
         filter: brightness(0);
     }
 
-    97% {
+    73% {
         filter: brightness(0);
     }
 
-    98% {
+    74% {
         filter: brightness(1);
     }
 
